@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decode</title>
+</head>
+<body>
+    <div id="textDisplay"></div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const emoji = urlParams.get('emoji');
+
+        // Placeholder decode function
+        function decodeEmojiToText(emoji) {
+            // TODO: Implement actual decoding logic
+            // This is a placeholder that returns a sample text
+            if (emoji) {
+                return `Decoded text from ${emoji}`;
+            }
+            return '';
+        }
+
+        // Display the decoded text
+        const decodedText = decodeEmojiToText(emoji);
+        document.getElementById('textDisplay').textContent = decodedText;
+    </script>
+</body>
+</html>

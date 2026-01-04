@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode</title>
+</head>
+<body>
+    <div id="emojiDisplay">💩</div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const text = urlParams.get('text');
+        const emoji = urlParams.get('emoji');
+
+        // Placeholder encode function
+        function encodeTextToEmoji(text, emoji) {
+            // TODO: Implement actual encoding logic
+            // This is a placeholder that returns the emoji
+            return emoji || '💩';
+        }
+
+        // Display the emoji
+        const displayEmoji = encodeTextToEmoji(text, emoji);
+        document.getElementById('emojiDisplay').textContent = displayEmoji;
+    </script>
+</body>
+</html>

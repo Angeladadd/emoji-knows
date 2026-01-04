@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Knows Everything</title>
+</head>
+<body>
+    <h1>emoji-knows-everything</h1>
+    <p>Hide and reveal messages using emojis</p>
+
+    <h2>ENCODE - Hide a message in an emoji</h2>
+    <p><code>encode.html?text=&lt;message&gt;&emoji=&lt;emoji&gt;</code></p>
+    <p>Encodes your secret message into an emoji. The emoji acts as a container for your hidden text.</p>
+    <p><strong>text</strong> (required): The message you want to hide</p>
+    <p><strong>emoji</strong> (optional): The emoji to use as container. Default: 💩</p>
+    <p>Example: <a href="encode.html?text=secret&emoji=🎉">encode.html?text=secret&emoji=🎉</a></p>
+
+    <h2>DECODE - Reveal a hidden message</h2>
+    <p><code>decode.html?emoji=&lt;emoji&gt;</code></p>
+    <p>Decodes the secret message hidden inside an emoji. Simply paste the emoji that contains your hidden text.</p>
+    <p><strong>emoji</strong> (required): The emoji containing the hidden message</p>
+    <p>Example: <a href="decode.html?emoji=🎉">decode.html?emoji=🎉</a></p>
+</body>
+</html>
