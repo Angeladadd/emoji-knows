@@ -39,6 +39,12 @@
         // Display the emoji with hidden text
         const displayEmoji = encodeTextToEmoji(text, emoji);
         document.getElementById('emojiDisplay').textContent = displayEmoji;
+        
+        // Render the full decode URL with full path
+        const fullDecodeUrl = `${window.location.origin}${window.location.pathname.split('/').slice(0, -1).join('/')}/decode.html?emoji=${displayEmoji}`;
+        const urlElement = document.createElement('p');
+        urlElement.innerHTML = `Decode: <a href="${fullDecodeUrl}">${fullDecodeUrl}</a>`;
+        document.body.appendChild(urlElement);
     </script>
 </body>
 </html>
