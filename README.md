@@ -15,7 +15,7 @@ encode.html?text=<message>&emoji=<emoji>
 
 **Example:**
 ```
-http://localhost:8000/encode.html?text=secret&emoji=🎉
+http://angeladadd.github.io/emoji-knows/encode.html?text=secret&emoji=🎉
 ```
 
 ### Decode - Reveal a hidden message
@@ -28,7 +28,7 @@ decode.html?emoji=<emoji>
 
 **Example:**
 ```
-http://localhost:8000/decode.html?emoji=🎉​‌‌‌​​‌‌​‌‌​​‌​‌​‌‌​​​‌‌​‌‌‌​​‌​​‌‌​​‌​‌​‌‌‌​‌​​
+http://angeladadd.github.io/emoji-knows/decode.html?emoji=🎉​‌‌‌​​‌‌​‌‌​​‌​‌​‌‌​​​‌‌​‌‌‌​​‌​​‌‌​​‌​‌​‌‌‌​‌​​
 ```
 
 ## Test Locally
