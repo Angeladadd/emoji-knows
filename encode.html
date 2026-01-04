@@ -14,14 +14,29 @@
         const text = urlParams.get('text');
         const emoji = urlParams.get('emoji');
 
-        // Placeholder encode function
+        // Zero Width Steganography encoding
         function encodeTextToEmoji(text, emoji) {
-            // TODO: Implement actual encoding logic
-            // This is a placeholder that returns the emoji
-            return emoji || '💩';
+            if (!text) return emoji || '💩';
+            
+            // Convert text to binary
+            let binary = '';
+            for (let i = 0; i < text.length; i++) {
+                binary += text.charCodeAt(i).toString(2).padStart(8, '0');
+            }
+            
+            // Map binary to zero-width characters
+            // 0 = Zero Width Space (U+200B)
+            // 1 = Zero Width Non-Joiner (U+200C)
+            let encoded = '';
+            for (let bit of binary) {
+                encoded += bit === '0' ? '\u200B' : '\u200C';
+            }
+            
+            // Append hidden text to emoji
+            return (emoji || '💩') + encoded;
         }
 
-        // Display the emoji
+        // Display the emoji with hidden text
         const displayEmoji = encodeTextToEmoji(text, emoji);
         document.getElementById('emojiDisplay').textContent = displayEmoji;
     </script>

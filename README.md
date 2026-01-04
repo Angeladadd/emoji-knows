@@ -28,7 +28,7 @@ decode.html?emoji=<emoji>
 
 **Example:**
 ```
-http://localhost:8000/decode.html?emoji=🎉
+http://localhost:8000/decode.html?emoji=🎉​‌‌‌​​‌‌​‌‌​​‌​‌​‌‌​​​‌‌​‌‌‌​​‌​​‌‌​​‌​‌​‌‌‌​‌​​
 ```
 
 ## Test Locally
@@ -36,7 +36,7 @@ http://localhost:8000/decode.html?emoji=🎉
 To test the website locally, run a simple HTTP server from the project directory:
 
 ```bash
-cd /Users/sunchenge/dev/emoji-knows-everything
+cd <path to>/emoji-knows-everything
 python3 -m http.server 8000
 ```
 

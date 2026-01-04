@@ -13,14 +13,30 @@
         const urlParams = new URLSearchParams(window.location.search);
         const emoji = urlParams.get('emoji');
 
-        // Placeholder decode function
+        // Zero Width Steganography decoding
         function decodeEmojiToText(emoji) {
-            // TODO: Implement actual decoding logic
-            // This is a placeholder that returns a sample text
-            if (emoji) {
-                return `Decoded text from ${emoji}`;
+            if (!emoji) return '';
+            
+            // Extract zero-width characters (skip visible emoji)
+            let encoded = '';
+            for (let char of emoji) {
+                if (char === '\u200B' || char === '\u200C') {
+                    encoded += char === '\u200B' ? '0' : '1';
+                }
             }
-            return '';
+            
+            if (!encoded) return 'No hidden message found';
+            
+            // Convert binary chunks back to text
+            let text = '';
+            for (let i = 0; i < encoded.length; i += 8) {
+                let byte = encoded.substr(i, 8);
+                if (byte.length === 8) {
+                    text += String.fromCharCode(parseInt(byte, 2));
+                }
+            }
+            
+            return text || 'No valid message';
         }
 
         // Display the decoded text
