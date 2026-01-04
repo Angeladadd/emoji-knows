@@ -3,83 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encode - Emoji Knows Everything</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .emoji-display {
-            font-size: 120px;
-            margin: 40px 0;
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .info {
-            color: #666;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: transform 0.2s;
-        }
-        a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .params {
-            text-align: left;
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 14px;
-            word-break: break-all;
-        }
-        .params strong {
-            color: #667eea;
-        }
-    </style>
+    <title>Encode</title>
 </head>
 <body>
-    <div class="container">
-        <h1>🔒 Encode</h1>
-        <div class="emoji-display" id="emojiDisplay">💩</div>
-        <div class="params">
-            <div><strong>Text:</strong> <span id="textParam">N/A</span></div>
-            <div><strong>Emoji:</strong> <span id="emojiParam">💩</span></div>
-        </div>
-        <div class="info">
-            Use URL parameters: ?text=your_text&emoji=🎉
-        </div>
-        <a href="index.html">← Back to Home</a>
-    </div>
+    <div id="emojiDisplay">💩</div>
 
     <script>
         // Get URL parameters
@@ -97,14 +24,6 @@
         // Display the emoji
         const displayEmoji = encodeTextToEmoji(text, emoji);
         document.getElementById('emojiDisplay').textContent = displayEmoji;
-        
-        // Show parameters
-        if (text) {
-            document.getElementById('textParam').textContent = text;
-        }
-        if (emoji) {
-            document.getElementById('emojiParam').textContent = emoji;
-        }
     </script>
 </body>
 </html>

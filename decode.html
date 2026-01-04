@@ -3,87 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decode - Emoji Knows Everything</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-        }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .text-display {
-            font-size: 24px;
-            margin: 40px 0;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            background: #f5f5f5;
-            border-radius: 10px;
-            word-break: break-word;
-            color: #333;
-        }
-        .info {
-            color: #666;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: transform 0.2s;
-        }
-        a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .params {
-            text-align: left;
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            font-size: 14px;
-            word-break: break-all;
-        }
-        .params strong {
-            color: #667eea;
-        }
-    </style>
+    <title>Decode</title>
 </head>
 <body>
-    <div class="container">
-        <h1>🔓 Decode</h1>
-        <div class="text-display" id="textDisplay">No text decoded yet</div>
-        <div class="params">
-            <div><strong>Emoji:</strong> <span id="emojiParam">N/A</span></div>
-        </div>
-        <div class="info">
-            Use URL parameter: ?emoji=🎉
-        </div>
-        <a href="index.html">← Back to Home</a>
-    </div>
+    <div id="textDisplay"></div>
 
     <script>
         // Get URL parameters
@@ -97,17 +20,12 @@
             if (emoji) {
                 return `Decoded text from ${emoji}`;
             }
-            return 'No text decoded yet';
+            return '';
         }
 
         // Display the decoded text
         const decodedText = decodeEmojiToText(emoji);
         document.getElementById('textDisplay').textContent = decodedText;
-        
-        // Show parameter
-        if (emoji) {
-            document.getElementById('emojiParam').textContent = emoji;
-        }
     </script>
 </body>
 </html>
