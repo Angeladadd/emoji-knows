@@ -13,10 +13,17 @@
         const urlParams = new URLSearchParams(window.location.search);
         const text = urlParams.get('text');
         const emoji = urlParams.get('emoji');
+        const maxLength = 100;
 
         // Zero Width Steganography encoding
         function encodeTextToEmoji(text, emoji) {
-            if (!text) return emoji || '💩';
+            if (!text) {
+                return 'Error: No message provided to encode.';
+            }
+            // If text length exceeds a certain limit, render a warning
+            if (text.length > maxLength) {
+                return 'Error: Message too long to encode, max length is ' + maxLength + ' characters.';
+            }
             
             // Convert text to binary
             let binary = '';
@@ -40,11 +47,13 @@
         const displayEmoji = encodeTextToEmoji(text, emoji);
         document.getElementById('emojiDisplay').textContent = displayEmoji;
         
-        // Render the full decode URL with full path
-        const fullDecodeUrl = `${window.location.origin}${window.location.pathname.split('/').slice(0, -1).join('/')}/decode.html?emoji=${displayEmoji}`;
-        const urlElement = document.createElement('p');
-        urlElement.innerHTML = `Decode: <a href="${fullDecodeUrl}">${fullDecodeUrl}</a>`;
-        document.body.appendChild(urlElement);
+        // Render the full decode URL with full path only if encoding was successful
+        if (text && text.length <= maxLength) {
+            const fullDecodeUrl = `${window.location.origin}${window.location.pathname.split('/').slice(0, -1).join('/')}/decode.html?emoji=${encodeURIComponent(displayEmoji)}`;
+            const urlElement = document.createElement('p');
+            urlElement.innerHTML = `Decode: <a href="${fullDecodeUrl}">${fullDecodeUrl}</a>`;
+            document.body.appendChild(urlElement);
+        }
     </script>
 </body>
 </html>
